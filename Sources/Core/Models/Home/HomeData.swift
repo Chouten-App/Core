@@ -20,8 +20,9 @@ public struct HomeData: Codable, Equatable, Hashable {
     public let isWidescreen: Bool
     public let current: Int?
     public let total: Int?
+    public let moduleId: String?
 
-    public init(id: String = UUID().uuidString, url: String, titles: Titles, description: String, poster: String, label: Label, indicator: String, status: ItemStatus = .none, isWidescreen: Bool = false, current: Int?, total: Int?) {
+    public init(id: String = UUID().uuidString, url: String, titles: Titles, description: String, poster: String, label: Label, indicator: String, status: ItemStatus = .none, isWidescreen: Bool = false, current: Int?, total: Int?, moduleId: String? = nil) {
         self.id = id
         self.url = url
         self.titles = titles
@@ -33,6 +34,7 @@ public struct HomeData: Codable, Equatable, Hashable {
         self.current = current
         self.total = total
         self.status = status
+        self.moduleId = moduleId
     }
     
     public func hash(into hasher: inout Hasher) {
