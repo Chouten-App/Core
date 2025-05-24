@@ -31,6 +31,6 @@ public struct MediaStream: Codable, Equatable, Sendable {
         let skipValues = jsValue["skips"]?.toSkipTimeArray()
         self.skips = skipValues ?? []
 
-        self.headers = nil // jsValue.forProperty("headers")?.toDictionary() as? [String: String]
+        self.headers = jsValue.forProperty("headers")?.toDictionary() as? [String: String]
     }
 }
